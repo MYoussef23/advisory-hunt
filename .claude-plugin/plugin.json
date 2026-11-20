@@ -1,6 +1,6 @@
 {
   "name": "advisory-hunt",
   "displayName": "Advisory Hunt Agent",
-  "version": "1.0.0",
-  "description": "Turn a public security advisory or CVE into a sourced Word hunt guide with queries, detection rules and triage steps for Sentinel, Sumo Logic, Cortex XDR and Splunk."
+  "version": "1.1.0",
+  "description": "Create a sourced Word hunt guide with queries, detection rules and triage for Microsoft Sentinel, Sumo Logic, Cortex XDR, Splunk, CrowdStrike Falcon (CQL) and Microsoft Defender XDR (KQL)."
 }

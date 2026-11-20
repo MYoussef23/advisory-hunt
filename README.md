@@ -4,7 +4,18 @@
 
 Use **Plugins → + Add → Upload plugin** and select the downloaded ZIP as it is. Open a new Cowork task and type **Hunt this advisory: [URL]**. To select the workflow explicitly, type **/**, find **Advisory Hunt Agent → hunt**, and supply the URL or CVE. The qualified command is **/advisory-hunt:hunt**. No project upload is required. The plugin uses Claude's existing web research and document capabilities. It does not require Ollama, an API key or a SIEM connection.
 
-The result is a downloadable Word hunt guide for Microsoft Sentinel, Sumo Logic, Cortex XDR and Splunk. A run researches primary sources, identifies affected builds, writes hunting queries and detection rules, states what was validated, and gives analysts triage and remediation guidance. Provide approved schemas or redacted samples if you want tenant-specific mappings.
+The default Word guide covers six platforms. A run researches primary sources, identifies affected builds, writes hunting queries and detection rules, states what was validated, and gives analysts triage and remediation guidance. Provide approved schemas or redacted samples if you want tenant-specific mappings.
+
+| Platform | Hunt language and surface |
+| --- | --- |
+| Microsoft Sentinel | KQL in the Sentinel workspace |
+| Sumo Logic | Search Query Language |
+| Cortex XDR | XQL |
+| Splunk | SPL |
+| CrowdStrike Falcon | CrowdStrike Query Language (CQL) in Advanced event search |
+| Microsoft Defender XDR | KQL in Defender Advanced Hunting |
+
+Version **1.1.0** adds Falcon Next-Gen SIEM correlation rule templates and Defender XDR custom detection templates when the available data supports them. To test the update, run `/advisory-hunt:hunt <advisory URL>` with no platform restriction and check the Word guide for six platform sections. To narrow a run, append a request such as **Cover only CrowdStrike Falcon and Microsoft Defender XDR**. If your project instructions specify the original four platforms, change that line to **Use the plugin’s default platform list unless I request a subset**.
 
 ## Choose a model once
 
